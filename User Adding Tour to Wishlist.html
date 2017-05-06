@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www.phptravels.net/" />
+<title>User Adding Tour to Wishlist</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">User Adding Tour to Wishlist</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.navbar-toggle</td>
+	<td></td>
+</tr>
+<!--verify that john is already logged in-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=John</td>
+	<td></td>
+</tr>
+<!--verify that tour link is present-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Tours</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Tours</td>
+	<td></td>
+</tr>
+<!--verify tour related filter are present after clicking link-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=button.collapsebtn.go-text-right</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>xpath=(//button[@type='button'])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>xpath=(//button[@type='button'])[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=span.searchtext &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=span.select2-chosen</td>
+	<td></td>
+</tr>
+<!--verify that search optiosn actually resulted in clickable tours-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//h4/a/b</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//h4/a/b</td>
+	<td></td>
+</tr>
+<!--verify that add to wishlist button is present -->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='OVERVIEW']/div/div/div[3]/div[2]/div[2]/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='OVERVIEW']/div/div/div[3]/div[2]/div[2]/span</td>
+	<td></td>
+</tr>
+<!--verify that if tour was added to wishlist, option to remove from wishlist is available after-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='OVERVIEW']/div/div/div[3]/div[2]/div[2]/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='OVERVIEW']/div/div/div[3]/div[2]/div[2]/span</td>
+	<td></td>
+</tr>
+<!--verify that you will see it in wishlist-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='OVERVIEW']/div/div/div[3]/div[2]/div[2]/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='OVERVIEW']/div/div/div[3]/div[2]/div[2]/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=John</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=John</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Account</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
