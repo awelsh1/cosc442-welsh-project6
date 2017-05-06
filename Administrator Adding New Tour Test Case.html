@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www.phptravels.net/admin" />
+<title>Administrator Adding New Tour Test Case</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Administrator Adding New Tour Test Case</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/admin</td>
+	<td></td>
+</tr>
+<!--verify that admin is logged on-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=My Profile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Tours</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Tours</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Add New</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Add New</td>
+	<td></td>
+</tr>
+<!--assert that add new brings you to an add tour screen complete with submission button, fields to type necessary information-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>name=tourname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=add</td>
+	<td></td>
+</tr>
+<!--if no information is posted then admin should be prompted to fill in fields that prompt dictates-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.alert.alert-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=tourname</td>
+	<td>Average</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=add</td>
+	<td></td>
+</tr>
+<!--if only tour name is put in field than it should stilll return prompt-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>//div[@id='content']/div/div/p[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=tourname</td>
+	<td>average</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=adultprice</td>
+	<td>$20</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=#s2id_locationlist1 &gt; a.select2-choice &gt; span.select2-chosen</td>
+	<td></td>
+</tr>
+<!--if tour type, tour name, and adult price arent filled out, admin should get prompt.-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.alert.alert-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=tourname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=adultprice</td>
+	<td>$20 </td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=tourname</td>
+	<td>average </td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.select2-chosen</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='select2-drop']/ul/li[2]/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=add</td>
+	<td></td>
+</tr>
+<!--all fields filled out appropriate admin should get success add, print option and csv option-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=h4.ui-pnotify-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=Print</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=Export into CSV</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=average</td>
+	<td></td>
+</tr>
+<!---->
+<!---->
+
+</tbody></table>
+</body>
+</html>

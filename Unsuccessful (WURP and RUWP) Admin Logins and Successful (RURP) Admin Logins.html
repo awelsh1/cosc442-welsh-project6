@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www.phptravels.net/supplier" />
+<title>Unsuccessful Admin Login (wrong password or wrong username)</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Unsuccessful Admin Login (wrong password or wrong username)</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/admin</td>
+	<td></td>
+</tr>
+<!--verify that login panel is stated-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=h2.form-heading.text-center</td>
+	<td></td>
+</tr>
+<!--verify that email field is present-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>name=email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=email</td>
+	<td>admin@phptravels.com</td>
+</tr>
+<!--verify that password field is also present-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>name=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>wrongpassword</td>
+</tr>
+<!--verify that submission button is there-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<!--verify that after unsuccessful login that you're still at the login page-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=h2.form-heading.text-center</td>
+	<td></td>
+</tr>
+<!--verify that user has been prompted with incorrect credential prompt-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>//form/div[2]/div</td>
+	<td></td>
+</tr>
+<!--same as above but with wrong email as opposed to wrong password-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>name=email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=email</td>
+	<td>wrong@email.com</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>name=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>demoadmin</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<!--verify that user has been prompoted with invalid login credentials prompt-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>//form/div[2]/div</td>
+	<td></td>
+</tr>
+<!--verify that it says login panel-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=h2.form-heading.text-center</td>
+	<td></td>
+</tr>
+<!--verify email field is there-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>name=email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=email</td>
+	<td>admin@phptravels.com</td>
+</tr>
+<!--verify password field is there-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>name=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>demoadmin</td>
+</tr>
+<!--verify that both remember me option and check box is there-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=ins.iCheck-helper</td>
+	<td></td>
+</tr>
+<!--verify that login button is present-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<!--verify after login dashboard has my profile and log out options-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+<!--verify that successful logout goes back to login page-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=h2.form-heading.text-center</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

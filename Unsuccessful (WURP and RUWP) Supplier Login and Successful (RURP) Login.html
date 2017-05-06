@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www.phptravels.net/supplier" />
+<title>Unsuccessful (WURP and RUWP) Supplier Login and Successful (RURP) Login</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Unsuccessful (WURP and RUWP) Supplier Login and Successful (RURP) Login</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/supplier</td>
+	<td></td>
+</tr>
+<!--verify that its the login page-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=h2.form-heading.text-center</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>name=email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=email</td>
+	<td>supplier@phptravels.com</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>name=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>wrongpassword</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=ins.iCheck-helper</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<!--verify that supplier is prompted about invalid login info -->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//form/div[2]/div</td>
+	<td></td>
+</tr>
+<!--verify that supplier has forgot password option-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=strong</td>
+	<td></td>
+</tr>
+<!--verify you never left login page-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=h2.form-heading.text-center</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>name=email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=email</td>
+	<td>wrong@email.com</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>name=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>demosupplier</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<!--verify supplier is prompted with invalid login credentials when typing in right password but wrong email-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//form/div[2]/div</td>
+	<td></td>
+</tr>
+<!--verify still at same login point-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=strong</td>
+	<td></td>
+</tr>
+<!--END OF UNSUCCESFUL LOGIN TEST CASES-->
+<!--START OF SUCCESSFUL LOGIN TEST CASE-->
+<tr>
+	<td>open</td>
+	<td>/supplier</td>
+	<td></td>
+</tr>
+<!--verify that it is login page-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=h2.form-heading.text-center</td>
+	<td></td>
+</tr>
+<!--verify that email field is available-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>name=email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=email</td>
+	<td>supplier@phptravels.com</td>
+</tr>
+<!--verify that password field is available-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>name=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>demosupplier</td>
+</tr>
+<!--verify that remember box is present-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=ins.iCheck-helper</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<!--verify that login was successful by being able to access profile-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=My Profile</td>
+	<td></td>
+</tr>
+<!--verify that if logged supplier can log out-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+<!--verify that supplier is back at login page after logging out-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=h2.form-heading.text-center</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
